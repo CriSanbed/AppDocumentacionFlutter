@@ -1,11 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 //BOTON SI VA A TENER ACCION CUANDO SE PULSE
 //CREANDO LA CLASE
 class GoogleButton extends StatefulWidget {
   //declaro parametros para el alto y ancho del boton para la clase _GoogleButton
-  double widthC = 0.0;
-  double heightC = 0.0;
+  double widthC = 0;
+  double heightC = 0;
   late final String textC;
 
   // que pasa cuando se tapee, lo resuelve el constructor
@@ -32,8 +34,8 @@ class _GoogleButton extends State<GoogleButton> {
     return InkWell(
       onTap: widget.onPressed,
       child: Container(
-        margin: const EdgeInsets.only(top: 15),
-        width: widget.heightC,
+        margin: const EdgeInsets.only(top: 35),
+        width: widget.widthC,
         height: widget.heightC,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
@@ -42,10 +44,15 @@ class _GoogleButton extends State<GoogleButton> {
                 begin: FractionalOffset(0.2, 0.0),
                 end: FractionalOffset(1.0, 0.6),
                 stops: [0.0, 0.7])),
-        child: Text(
-          widget.textC,
-          style: const TextStyle(fontSize: 20, color: Colors.white),
-        ),
+        child: Align(
+          alignment: Alignment.center,
+          child: Text(
+            widget.textC,
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 22, color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+        )
+
       ),
     );
   }

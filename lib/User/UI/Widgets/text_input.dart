@@ -21,7 +21,8 @@ class TextInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(right: 30, left: 30),
-      child: TextField(
+      child: TextFormField(
+        maxLength: 50, //despliego cuanto texto pueden digitar
         decoration: InputDecoration(
             filled: true,
             fillColor: Colors.lightBlue[50],
@@ -30,14 +31,14 @@ class TextInput extends StatelessWidget {
             enabledBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.black),
                 borderRadius: BorderRadius.all(Radius.circular(10))),
-            //como esta seleccionada
+            //estilo del borde al estar dentro de el
             focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.lightBlue),
+                borderSide: BorderSide(color: Colors.red),
                 borderRadius: BorderRadius.all(Radius.circular(10)))),
         controller: controller,
-        keyboardType: inputType,
+        keyboardType: TextInputType.visiblePassword, //metodo de control de info en vez de inputType
         maxLines: maxLineas,
-        //estilo de visualizacion
+        //estilo de visualizacion con fuente importada
         style: const TextStyle(
             fontSize: 20,
             color: Colors.black87,

@@ -61,7 +61,7 @@ class Login extends StatelessWidget {
         Container(
           margin: const EdgeInsets.only(top: 15.0),
           child: TextInput(
-              hint: "Username",
+              hint: "Username or Email",
               inputType: TextInputType.name,
               controller: _controllerUsername,
               maxLineas: 1),
@@ -82,24 +82,43 @@ class Login extends StatelessWidget {
             child: MaterialButton(
               minWidth: 100.0,
               height: 40.0,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(15)),
+              ),
               onPressed: () {},
-              color: Colors.lightBlue,
+              color: Color(0xFF04DE5B),
               child: const Text(
-                'Submit',
-                style: TextStyle(color: Colors.white),
+                'Login',
+                style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
           ),
         ),
 
-        GoogleButton(
-            textC: 'Login with Google',
-            widthC: 80,
-            heightC: 35,
-            onPressed: () {
-              blocUser.signIn().then((UserCredential user) =>
-                  print("Usted se ha autenticado como ${user.user}"));
-            })
+        Container(
+          height: 20.0,
+          margin: const EdgeInsets.only(top: 15.0),
+          child: const Text(
+            "or",
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 26),
+          ),
+        ),
+
+        Container(
+            margin: const EdgeInsets.only(top: 20.0),
+            child: Center(
+                child: GoogleButton(
+                    textC: 'Login with Google',
+                    widthC: 300.0,
+                    heightC: 40.0,
+                    onPressed: () {
+                      blocUser.signIn().then((UserCredential user) =>
+                          print("Se ha logueado como: ${user.user}"));
+                    })
+            )
+        )
+
       ],
     ));
   }
