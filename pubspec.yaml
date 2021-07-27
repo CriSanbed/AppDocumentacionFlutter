@@ -69,4 +69,11 @@ flutter:
     - assets/img/camara.png
     - assets/img/login.jpg
     - assets/img/login.png
+  fonts:
+    - family: Quantico
+      fonts:
+      - asset: fonts\Quantico-Regular.ttf
+    - family: Redresed
+      fonts:
+      - asset: fonts\Redressed-Regular.ttf
 
