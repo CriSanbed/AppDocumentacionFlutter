@@ -44,6 +44,7 @@ class Profile extends StatelessWidget {
                 controller: _controllerName,
                 maxLineas: 1),
           ), //CONTAINER PARA EL NOMBRE
+
           Container(
             margin: const EdgeInsets.only(top: 15.0),
             child: TextInput(
@@ -52,6 +53,7 @@ class Profile extends StatelessWidget {
                 controller: _controllerHobbies,
                 maxLineas: 6),
           ), //CONTAINER PARA LOS HOBBIES E INTERESES
+
           Container(
             margin: const EdgeInsets.only(top: 20.0),
             child: Center(

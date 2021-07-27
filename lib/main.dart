@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:app_documentar/User/Bloc/bloc_user.dart';
+import 'User/UI/Screen/login.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+
+void main() async{
+  //usando firebase_core
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -15,9 +21,9 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
         child: MaterialApp(
           title: 'Login',
-          home: const Login(),
+          home: Login(), //pantalla inicial en la app
           initialRoute: 'main',
-          routes: {'main': (context) => const Login()},
+          routes: {'main': (context) => Login()},
         ),
         bloc: UserBloc());
   }
